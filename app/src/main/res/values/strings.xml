@@ -3,6 +3,7 @@
 
     <string name="help">Per iniziare, avviare la Generazione di Vettori.</string>
     <string name="info">Cosa sto per fare?</string>
+    <string name="info2">Cosa sto facendo?</string>
     <string name="start_gen">Genera Vettori</string>
     <string name="gauss">Avvia l\'algoritmo</string>
     <string name="credits">Creato da Andrés Cocever</string>

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.andcoce.estrazionebase.bean.Matrix;
+import com.andcoce.estrazionebase.business.GaussianElimination;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button infoBtn, genBtn, gaussBtn;
 
     private Matrix matrix;
+    private GaussianElimination gauss;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         matrix = new Matrix();
+        gauss = new GaussianElimination(matrix);
         initUI();
     }
 
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         infoText.setTextSize(18);
         infoText.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);
 
+        infoBtn.setText(R.string.info2);
         genBtn.setVisibility(View.GONE);
         gaussBtn.setVisibility(View.VISIBLE);
     }
@@ -46,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener onGauss = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            //TODO
+            gauss.echelonForm();
+            infoText.setText(matrix.toString());
         }
     };
 

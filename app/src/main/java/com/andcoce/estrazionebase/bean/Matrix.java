@@ -17,7 +17,7 @@ public class Matrix {
     public void init(){
         for(int i = 0; i < N_VECTORS; i++){
             for(int j = 0; j < VECTOR_DIM; j++){
-                matrix[i][j] = rand.nextInt(20);
+                matrix[i][j] = rand.nextInt(10);
             }
         }
     }
@@ -38,7 +38,7 @@ public class Matrix {
         String output = "Sono stati generati i seguenti vettori:\n";
 
         for(int i = 0; i < N_VECTORS; i++){
-            output = output + "v" + Integer.toString(i+1) + ": (";
+            output = output + "v" + Integer.toString(i+1) + " = (";
             for(int j = 0; j < VECTOR_DIM; j++){
                 output = output + matrix[i][j];
                 if(j == VECTOR_DIM - 1){
