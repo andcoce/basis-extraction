@@ -13,7 +13,7 @@ import com.andcoce.estrazionebase.bean.Matrix;
 public class MainActivity extends AppCompatActivity {
 
     private TextView infoText;
-    private Button infoBtn, genBtn;
+    private Button infoBtn, genBtn, gaussBtn;
 
     private Matrix matrix;
 
@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         infoText.setText(matrix.toString());
         infoText.setTextSize(18);
         infoText.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);
+
+        genBtn.setVisibility(View.GONE);
+        gaussBtn.setVisibility(View.VISIBLE);
     }
 
     View.OnClickListener onGenerate = new View.OnClickListener() {
@@ -37,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             matrix.init();
             printMatrix();
+        }
+    };
+
+    View.OnClickListener onGauss = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //TODO
         }
     };
 
@@ -52,8 +62,10 @@ public class MainActivity extends AppCompatActivity {
         infoText = findViewById(R.id.infoView);
         infoBtn  = findViewById(R.id.infoBtn);
         genBtn   = findViewById(R.id.genBtn);
+        gaussBtn   = findViewById(R.id.gaussBtn);
 
         infoBtn.setOnClickListener(onInfo);
         genBtn.setOnClickListener(onGenerate);
+        gaussBtn.setOnClickListener(onGauss);
     }
 }
