@@ -20,7 +20,7 @@ public class GaussianElimination {
 
     private void checkFirstElement(int col){
         for(int row = 0; row < matrix.getVECTOR_DIM(); row++){
-            if(matrix.getMatrix()[col][row].equals("0") && previousAreZero(row, col)){
+            if(matrix.getMatrix()[col][row] == 0 && previousAreZero(row, col)){
                 swapRows(row, findRow(row, col));
             }
         }
@@ -28,7 +28,7 @@ public class GaussianElimination {
 
     private int findRow(int start, int col){
         for(int i = matrix.getVECTOR_DIM() -1; i >= start; i--){
-            if(!matrix.getMatrix()[col][i].equals("0")){
+            if(matrix.getMatrix()[col][i] != 0){
                 return i;
             }
         }
@@ -37,7 +37,7 @@ public class GaussianElimination {
 
     private void swapRows(int row1, int row2){
         if(row2 != matrix.getVECTOR_DIM() + 1 && row1 < row2){
-            String tmpRow[] = new String[matrix.getN_VECTORS()];
+            double tmpRow[] = new double[matrix.getN_VECTORS()];
             for(int i = 0; i < matrix.getN_VECTORS(); i++){
                 tmpRow[i] = matrix.getMatrix()[i][row1];
                 matrix.getMatrix()[i][row1] = matrix.getMatrix()[i][row2];
@@ -49,7 +49,7 @@ public class GaussianElimination {
     private boolean previousAreZero(int row, int col){
         boolean prev = true;
         for(int i = col; i >= 0; i--){
-            if(!matrix.getMatrix()[i][row].equals("0")){
+            if(matrix.getMatrix()[i][row] != 0){
                 prev = false;
             }
         }
