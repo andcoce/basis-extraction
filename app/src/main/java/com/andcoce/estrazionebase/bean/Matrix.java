@@ -20,6 +20,13 @@ public class Matrix {
                 matrix[i][j] = rand.nextInt(10);
             }
         }
+
+        matrix[0][0] = 0;
+        matrix[1][0] = 0;
+        matrix[0][2] = 0;
+        matrix[0][4] = 0;
+        matrix[1][4] = 0;
+        matrix[2][4] = 0;
     }
 
     public int getVECTOR_DIM() {
