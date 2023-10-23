@@ -14,7 +14,7 @@ import com.andcoce.estrazionebase.business.GaussianElimination;
 public class MainActivity extends AppCompatActivity {
 
     private TextView infoText;
-    private Button infoBtn, genBtn, gaussBtn;
+    private Button infoBtn, genBtn, gaussBtn, resultsBtn;
 
     private Matrix matrix;
     private GaussianElimination gauss;
@@ -51,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             gauss.echelonForm();
+            gaussBtn.setVisibility(View.GONE);
+            resultsBtn.setVisibility(View.VISIBLE);
+        }
+    };
+
+    View.OnClickListener onResults = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
             Intent intent = new Intent(MainActivity.this, ResultsActivity.class);
             intent.putExtra("nVectors", matrix.getN_VECTORS());
             intent.putExtra("dim", matrix.getVECTOR_DIM());
@@ -72,13 +80,15 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void initUI(){
-        infoText = findViewById(R.id.infoView);
-        infoBtn  = findViewById(R.id.infoBtn);
-        genBtn   = findViewById(R.id.genBtn);
+        infoText   = findViewById(R.id.infoView);
+        infoBtn    = findViewById(R.id.infoBtn);
+        genBtn     = findViewById(R.id.genBtn);
         gaussBtn   = findViewById(R.id.gaussBtn);
+        resultsBtn = findViewById(R.id.resultsBtn);
 
         infoBtn.setOnClickListener(onInfo);
         genBtn.setOnClickListener(onGenerate);
         gaussBtn.setOnClickListener(onGauss);
+        resultsBtn.setOnClickListener(onResults);
     }
 }

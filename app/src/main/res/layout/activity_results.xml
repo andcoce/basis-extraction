@@ -27,11 +27,26 @@
         android:layout_centerHorizontal="true"
         />
 
+    <TextView
+        android:id="@+id/infoView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tableTitle"
+        android:fontFamily="@font/googlesansbold"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textAlignment="gravity"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_centerHorizontal="true"
+        />
+
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp">
+        android:layout_marginTop="400dp">
 
         <TableRow>
             <TextView

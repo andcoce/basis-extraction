@@ -6,9 +6,10 @@
     <string name="info2">Cosa sto facendo?</string>
     <string name="start_gen">Genera Vettori</string>
     <string name="gauss">Avvia l\'algoritmo</string>
+    <string name="results">Visualizza Matrice</string>
+    <string name="tableTitle">Matrice portata a Scala con il Metodo di Gauss</string>
     <string name="credits">Creato da Andrés Cocever</string>
 
-    <string name="desc">Questa semplice app si propone di estrarre la base da un insieme di 10 vettori definiti in 5 dimensioni.\n
-        Viene utilizzato il metodo di Eliminazione di Gauss-Jordan per portare la matrice a scala, verificando quindi l\'indipendenza dei vettori attraverso i pivot.</string>
+    <string name="desc">Questa semplice app si propone di estrarre la base da un insieme di 10 vettori definiti in 5 dimensioni.\nViene utilizzato il metodo di Eliminazione di Gauss-Jordan per portare la matrice a scala, verificando quindi l\'indipendenza dei vettori attraverso i pivot.</string>
     <string name="back">Torna alla Home</string>
 </resources>

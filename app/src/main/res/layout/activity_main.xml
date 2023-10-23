@@ -76,6 +76,16 @@
             android:fontFamily="@font/googlesansregular"
             android:visibility="gone"
             />
+        <Button
+            android:id="@+id/resultsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:text="@string/results"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/googlesansregular"
+            android:visibility="gone"
+            />
     </LinearLayout>
 
     <TextView
