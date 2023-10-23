@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void printMatrix(){
-        infoText.setText(matrix.toString());
+        infoText.setText(matrix.toVectorString());
         infoText.setTextSize(18);
         infoText.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);
 
@@ -51,7 +51,15 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             gauss.echelonForm();
-            infoText.setText(matrix.toString());
+            Intent intent = new Intent(MainActivity.this, ResultsActivity.class);
+            intent.putExtra("nVectors", matrix.getN_VECTORS());
+            intent.putExtra("dim", matrix.getVECTOR_DIM());
+            for(int i = 0; i < matrix.getN_VECTORS(); i++){
+                for(int j = 0; j < matrix.getVECTOR_DIM(); j++){
+                    intent.putExtra("mat" + i + j, matrix.getMatrix()[i][j]);
+                }
+            }
+            startActivity(intent);
         }
     };
 

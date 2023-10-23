@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="cell">
+        <item name="android:layout_width" >@dimen/table_cell_size</item>
+        <item name="android:layout_height">@dimen/table_cell_size</item>
+        <item name="android:layout_margin">@dimen/default_margin</item>
+        <item name="android:background"   >@color/white</item>
+        <item name="fontFamily"           >@font/googlesansbold</item>
+        <item name="android:textSize"     >@dimen/cell_font_size</item>
+        <item name="android:textColor"    >@color/black</item>
+        <item name="android:gravity"      >center</item>
+    </style>
+</resources>

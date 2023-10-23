@@ -13,7 +13,7 @@ public class GaussianElimination {
 
     public GaussianElimination(Matrix matrix){
         this.matrix = matrix;
-        decfor = new DecimalFormat("0.00");
+        decfor = new DecimalFormat("0.0");
     }
 
     public void echelonForm(){

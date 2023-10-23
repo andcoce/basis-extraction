@@ -42,7 +42,7 @@ public class Matrix {
         return matrix;
     }
 
-    public String toString(){
+    public String toVectorString(){
         String output = "Sono stati generati i seguenti vettori:\n";
 
         for(int i = 0; i < N_VECTORS; i++){
@@ -55,6 +55,19 @@ public class Matrix {
                     output = output + ", ";
                 }
             }
+        }
+
+        return output;
+    }
+
+    public String toMatrixString(){
+        String output = "";
+        for(int i = 0; i < VECTOR_DIM; i++){
+            String row = "";
+            for(int j = 0; j < N_VECTORS; j++){
+                row = row + Double.toString(matrix[j][i]) + "  ";
+            }
+            output = output + row.trim() + "\n";
         }
 
         return output;

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/dark_aqua"
+
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:fontFamily="@font/googlesansbold"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/board"
+        android:layout_marginTop="75dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="350dp">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/mat00"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat01"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat02"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat03"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat04"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat05"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat06"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat07"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat08"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat09"
+                style="@style/cell"
+                />
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/mat10"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat11"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat12"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat13"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat14"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat15"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat16"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat17"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat18"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat19"
+                style="@style/cell"
+                />
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/mat20"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat21"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat22"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat23"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat24"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat25"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat26"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat27"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat28"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat29"
+                style="@style/cell"
+                />
+
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/mat30"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat31"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat32"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat33"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat34"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat35"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat36"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat37"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat38"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat39"
+                style="@style/cell"
+                />
+
+        </TableRow>
+
+
+
+        <TableRow>
+            <TextView
+                android:id="@+id/mat40"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat41"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat42"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat43"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat44"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat45"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat46"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat47"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat48"
+                style="@style/cell"
+                />
+
+            <TextView
+                android:id="@+id/mat49"
+                style="@style/cell"
+                />
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:text="@string/back"
+        android:layout_marginTop="630dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/googlesansregular"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/credits"
+        android:fontFamily="@font/googlesansregular"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_marginTop="700dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
