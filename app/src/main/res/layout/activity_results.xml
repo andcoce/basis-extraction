@@ -34,11 +34,11 @@
         android:text="@string/tableTitle"
         android:fontFamily="@font/googlesansbold"
         android:textColor="@color/white"
-        android:textSize="13sp"
-        android:textAlignment="gravity"
+        android:textSize="15sp"
+        android:gravity="center"
         android:layout_marginTop="350dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_centerHorizontal="true"
         />
 
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp">
+        android:layout_marginTop="410dp">
 
         <TableRow>
             <TextView
@@ -321,7 +321,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/red"
         android:text="@string/back"
-        android:layout_marginTop="630dp"
+        android:layout_marginTop="650dp"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/googlesansregular"
         />
@@ -333,7 +333,7 @@
         android:fontFamily="@font/googlesansregular"
         android:textColor="@color/white"
         android:textSize="12sp"
-        android:layout_marginTop="700dp"
+        android:layout_marginTop="720dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_centerHorizontal="true"/>

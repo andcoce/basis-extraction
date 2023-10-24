@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,7 +15,7 @@ import com.andcoce.estrazionebase.business.GaussianElimination;
 public class MainActivity extends AppCompatActivity {
 
     private TextView infoText;
-    private Button infoBtn, genBtn, gaussBtn, resultsBtn;
+    private Button infoBtn, genBtn, gaussBtn, resultsBtn, resetBtn;
 
     private Matrix matrix;
     private GaussianElimination gauss;
@@ -29,30 +30,46 @@ public class MainActivity extends AppCompatActivity {
         initUI();
     }
 
-    private void printMatrix(){
-        infoText.setText(matrix.toVectorString());
-        infoText.setTextSize(18);
-        infoText.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);
-
-        infoBtn.setText(R.string.info2);
-        genBtn.setVisibility(View.GONE);
-        gaussBtn.setVisibility(View.VISIBLE);
-    }
-
     View.OnClickListener onGenerate = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             matrix.init();
-            printMatrix();
+
+            infoText.setText(matrix.toVectorString());
+            infoText.setTextSize(18);
+
+            infoBtn.setText(R.string.info2);
+            genBtn.setVisibility(View.GONE);
+            gaussBtn.setVisibility(View.VISIBLE);
         }
     };
 
     View.OnClickListener onGauss = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            gauss.echelonForm();
+            infoBtn.setVisibility(View.GONE);
             gaussBtn.setVisibility(View.GONE);
+            resetBtn.setVisibility(View.VISIBLE);
             resultsBtn.setVisibility(View.VISIBLE);
+
+            infoText.setText(gauss.echelonForm());
+        }
+    };
+
+    View.OnClickListener onReset = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            resetBtn.setVisibility(View.GONE);
+            resultsBtn.setVisibility(View.GONE);
+            infoBtn.setVisibility(View.VISIBLE);
+            infoBtn.setText(R.string.info);
+            genBtn.setVisibility(View.VISIBLE);
+
+            matrix = new Matrix();
+            gauss = new GaussianElimination(matrix);
+
+            infoText.setText(R.string.help);
+            infoText.setTextSize(25);
         }
     };
 
@@ -84,11 +101,13 @@ public class MainActivity extends AppCompatActivity {
         infoBtn    = findViewById(R.id.infoBtn);
         genBtn     = findViewById(R.id.genBtn);
         gaussBtn   = findViewById(R.id.gaussBtn);
+        resetBtn   = findViewById(R.id.resetBtn);
         resultsBtn = findViewById(R.id.resultsBtn);
 
         infoBtn.setOnClickListener(onInfo);
         genBtn.setOnClickListener(onGenerate);
         gaussBtn.setOnClickListener(onGauss);
+        resetBtn.setOnClickListener(onReset);
         resultsBtn.setOnClickListener(onResults);
     }
 }

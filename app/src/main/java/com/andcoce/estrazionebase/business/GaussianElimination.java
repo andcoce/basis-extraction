@@ -5,6 +5,8 @@ import android.util.Log;
 
 import com.andcoce.estrazionebase.bean.Matrix;
 
+import java.util.ArrayList;
+
 public class GaussianElimination {
 
     private Matrix matrix;
@@ -16,7 +18,7 @@ public class GaussianElimination {
         decfor = new DecimalFormat("0.0");
     }
 
-    public void echelonForm(){
+    public String echelonForm(){
         for(int col = 0; col < matrix.getN_VECTORS(); col++){
             if(col != 0){
                 System.out.println();
@@ -24,6 +26,8 @@ public class GaussianElimination {
             rearrange(col); //metodo che riordina le righe in base agli zeri prima di ogni operazione
             rowOperations(col);
         }
+
+        return buildResults(getPivotColumns());
     }
 
     private void rearrange(int col){
@@ -91,6 +95,45 @@ public class GaussianElimination {
             }
         }
         return prev;
+    }
+
+    private ArrayList<Integer> getPivotColumns(){
+        ArrayList<Integer> cols = new ArrayList<>();
+
+        for(int i = 0; i < matrix.getN_VECTORS(); i++){
+            boolean pivot = false;
+            for(int j = 0; j < matrix.getVECTOR_DIM(); j++){
+                if(previousAreZero(j, i) && matrix.getMatrix()[i][j] != 0){
+                    pivot = true;
+                }
+            }
+
+            if(pivot){
+                cols.add(i);
+            }
+        }
+
+        return cols;
+    }
+
+    private String buildResults(ArrayList<Integer> pivots){
+        String output1 = "Si ottiene che B = {";
+        String gen = "";
+        for(int i = 0; i < pivots.size(); i++){
+            gen = gen + "v" + (pivots.get(i) + 1);
+            if(i != pivots.size() - 1){
+                gen = gen + ", ";
+            }
+        }
+
+        output1 = output1 + gen + "} è una base per R^5.\n";
+
+        String output2 = "\nInoltre,\nSpan(" + gen + ") è uguale a Span(v1, ... , v10).";
+
+        String majorInfo = "\n\n\nÈ possibile visualizzare la matrice portata a scala ed i relativi pivot, cliccando sul pulsante \"Visualizza Matrice\".";
+
+
+        return output1 + output2 + majorInfo;
     }
 
     public Matrix getMatrix() {

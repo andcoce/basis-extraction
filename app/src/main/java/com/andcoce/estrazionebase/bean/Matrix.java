@@ -1,5 +1,6 @@
 package com.andcoce.estrazionebase.bean;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Matrix {
@@ -43,7 +44,7 @@ public class Matrix {
     }
 
     public String toVectorString(){
-        String output = "Sono stati generati i seguenti vettori:\n";
+        String output = "Si considerino i seguenti vettori generatori per R^5:\n\n";
 
         for(int i = 0; i < N_VECTORS; i++){
             output = output + "v" + Integer.toString(i+1) + " = (";
@@ -55,19 +56,6 @@ public class Matrix {
                     output = output + ", ";
                 }
             }
-        }
-
-        return output;
-    }
-
-    public String toMatrixString(){
-        String output = "";
-        for(int i = 0; i < VECTOR_DIM; i++){
-            String row = "";
-            for(int j = 0; j < N_VECTORS; j++){
-                row = row + Double.toString(matrix[j][i]) + "  ";
-            }
-            output = output + row.trim() + "\n";
         }
 
         return output;
