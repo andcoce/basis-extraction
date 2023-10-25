@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:text="@string/title"
         android:fontFamily="@font/googlesansbold"
         android:textColor="@color/white"
         android:textSize="35sp"
@@ -45,69 +45,75 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="650dp"
-        >
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            >
 
-        <Button
-            android:id="@+id/infoBtn"
+            <Button
+                android:id="@+id/infoBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/red"
+                android:text="@string/info"
+                android:fontFamily="@font/googlesansregular"
+                android:layout_marginRight="5dp"
+                />
+            <Button
+                android:id="@+id/genBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:text="@string/start_gen"
+                android:fontFamily="@font/googlesansregular"
+                android:layout_marginLeft="5dp"
+                />
+            <Button
+                android:id="@+id/gaussBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:text="@string/gauss"
+                android:fontFamily="@font/googlesansregular"
+                android:visibility="gone"
+                android:layout_marginLeft="5dp"
+                />
+            <Button
+                android:id="@+id/resetBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/red"
+                android:text="@string/reset"
+                android:fontFamily="@font/googlesansregular"
+                android:visibility="gone"
+                android:layout_marginRight="5dp"
+                />
+            <Button
+                android:id="@+id/resultsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:text="@string/results"
+                android:fontFamily="@font/googlesansregular"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/red"
-            android:text="@string/info"
-            android:layout_marginRight="5dp"
+            android:text="@string/credits"
             android:fontFamily="@font/googlesansregular"
-            />
-        <Button
-            android:id="@+id/genBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/green"
-            android:text="@string/start_gen"
-            android:layout_marginLeft="5dp"
-            android:fontFamily="@font/googlesansregular"
-            />
-        <Button
-            android:id="@+id/gaussBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/green"
-            android:text="@string/gauss"
-            android:layout_marginLeft="5dp"
-            android:fontFamily="@font/googlesansregular"
-            android:visibility="gone"
-            />
-        <Button
-            android:id="@+id/resetBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/red"
-            android:text="@string/reset"
-            android:layout_marginLeft="5dp"
-            android:fontFamily="@font/googlesansregular"
-            android:visibility="gone"
-            />
-        <Button
-            android:id="@+id/resultsBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/green"
-            android:text="@string/results"
-            android:layout_marginLeft="5dp"
-            android:fontFamily="@font/googlesansregular"
-            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+
+
             />
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/credits"
-        android:fontFamily="@font/googlesansregular"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        android:layout_marginTop="720dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="10dp"
-        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

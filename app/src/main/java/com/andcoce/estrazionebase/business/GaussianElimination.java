@@ -51,7 +51,7 @@ public class GaussianElimination {
     private void addFirstRowComb(int target, int start, double div, int pivotRow){
         for(int i = start; i < matrix.getN_VECTORS(); i++){
             double r = matrix.getMatrix()[i][target] - div*matrix.getMatrix()[i][pivotRow];
-            matrix.getMatrix()[i][target] = new BigDecimal("35.3456").setScale(1, RoundingMode.HALF_UP).doubleValue();
+            matrix.getMatrix()[i][target] = new BigDecimal(r).setScale(1, RoundingMode.HALF_UP).doubleValue();
         }
     }
 
@@ -124,11 +124,11 @@ public class GaussianElimination {
             }
         }
 
-        output1 = output1 + gen + "} è una base per R^5.\n";
+        output1 = output1 + gen + "} è una base per R⁵.\n";
 
-        String output2 = "\nInoltre,\nSpan(" + gen + ") è uguale a Span(v1, ... , v10).";
+        String output2 = "\nInoltre,\nSpan(" + gen + ")\nè uguale a\nSpan(v1, …, v10).\n";
 
-        String majorInfo = "\n\n\nÈ possibile visualizzare la matrice portata a scala ed i relativi pivot, cliccando sul pulsante \"Visualizza Matrice\".";
+        String majorInfo = "\nÈ possibile visualizzare la matrice portata a scala ed i relativi pivot, cliccando sul pulsante \"Visualizza Matrice\".";
 
 
         return output1 + output2 + majorInfo;

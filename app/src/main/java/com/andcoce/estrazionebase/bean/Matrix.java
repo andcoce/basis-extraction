@@ -44,7 +44,7 @@ public class Matrix {
     }
 
     public String toVectorString(){
-        String output = "Si considerino i seguenti vettori generatori per R^5:\n\n";
+        String output = "Si considerino i seguenti vettori generatori per R⁵:\n\n";
 
         for(int i = 0; i < N_VECTORS; i++){
             output = output + "v" + Integer.toString(i+1) + " = (";
