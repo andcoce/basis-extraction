@@ -11,6 +11,6 @@
     <string name="tableTitle">Matrice portata a Scala con il Metodo di Gauss.\nGli elementi Pivot sono evidenziati in rosso.</string>
     <string name="credits">Creato da Andrés Cocever</string>
 
-    <string name="desc">Questa semplice app si propone di estrarre la base, mediante algoritmo dello scarto da un insieme di 10 vettori definiti in 5 dimensioni.\nViene utilizzato il metodo di Eliminazione di Gauss-Jordan per portare la matrice a scala, verificando quindi l\'indipendenza dei vettori attraverso i pivot.\nInfatti, avremo che i vettori generati corrispondenti alle colonne della matrice a scala che contengono i pivot sono linearmente indipendenti, e che questi compongono quindi una base per lo spazio in 5 dimensioni.</string>
+    <string name="desc">Questa semplice app si propone di estrarre la base, avvalendosi del teorema di estrazione di una base da un insieme di 10 vettori definiti in 5 dimensioni.\n\nIl teorema di estrazione di base ha il seguente enunciato: \"Sia V uno Spazio Vettoriale finitamente generato su un campo K e sia {v1, …, vk} un insieme di generatori. Allora esiste una base B sottoinsieme di {v1, …, vk}.\"\n\nViene utilizzato il metodo di Eliminazione di Gauss-Jordan per portare la matrice a scala.\nInfatti, avremo che i vettori generati corrispondenti alle colonne della matrice a scala che contengono i pivot sono linearmente indipendenti, e che questi compongono quindi una base per lo spazio in 5 dimensioni.</string>
     <string name="back">Torna alla Home</string>
 </resources>

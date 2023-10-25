@@ -1,21 +1,19 @@
 package com.andcoce.estrazionebase.business;
 
-import android.icu.text.DecimalFormat;
 import android.util.Log;
 
 import com.andcoce.estrazionebase.bean.Matrix;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class GaussianElimination {
 
     private Matrix matrix;
 
-    private DecimalFormat decfor;
-
     public GaussianElimination(Matrix matrix){
         this.matrix = matrix;
-        decfor = new DecimalFormat("0.0");
     }
 
     public String echelonForm(){
@@ -53,7 +51,7 @@ public class GaussianElimination {
     private void addFirstRowComb(int target, int start, double div, int pivotRow){
         for(int i = start; i < matrix.getN_VECTORS(); i++){
             double r = matrix.getMatrix()[i][target] - div*matrix.getMatrix()[i][pivotRow];
-            matrix.getMatrix()[i][target] = Double.parseDouble(decfor.format(r));
+            matrix.getMatrix()[i][target] = new BigDecimal("35.3456").setScale(1, RoundingMode.HALF_UP).doubleValue();
         }
     }
 

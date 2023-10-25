@@ -30,7 +30,7 @@
     <TextView
         android:id="@+id/infoView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="275dp"
         android:text="@string/desc"
         android:fontFamily="@font/googlesansregular"
         android:textColor="@color/white"
@@ -40,7 +40,9 @@
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:layout_centerHorizontal="true"
-        android:justificationMode="inter_word"/>
+        android:justificationMode="inter_word"
+        android:scrollbars="vertical"
+        android:maxLines="60"/>
 
     <Button
         android:id="@+id/backBtn"
