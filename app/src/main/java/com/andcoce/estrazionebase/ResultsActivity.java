@@ -34,7 +34,7 @@ public class ResultsActivity extends AppCompatActivity {
         findPivotCells();
     }
 
-    private void fillTable(){
+    private void fillTable(){ //riempie la matrice tableLayout
         table = new TextView[nVectors][dim];
         for(int col = 0; col < nVectors; col++) {
             for (int row = 0; row < dim; row++) {
@@ -49,14 +49,8 @@ public class ResultsActivity extends AppCompatActivity {
     private void findPivotCells(){
         for(int i = 0; i < nVectors; i++){
             for(int j = 0; j < dim; j++){
-                if(i == 0){
-                    if(previousAreZero(i, j) && matrix[i][j] != 0){
-                        table[i][j].setBackgroundResource(R.color.red);
-                    }
-                }else{
-                    if(previousAreZero(i, j) && matrix[i][j] != 0 && matrix[i+1][j] != 0){
-                        table[i][j].setBackgroundResource(R.color.red);
-                    }
+                if(previousAreZero(i, j) && matrix[i][j] != 0){
+                    table[i][j].setBackgroundResource(R.color.red);
                 }
             }
         }

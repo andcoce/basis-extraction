@@ -15,20 +15,12 @@ public class Matrix {
         rand = new Random();
     }
 
-    public void init(){
+    public void init(){ //genera matrice random, con valori da 0 a 9
         for(int i = 0; i < N_VECTORS; i++){
             for(int j = 0; j < VECTOR_DIM; j++){
                 matrix[i][j] = (rand.nextInt(10));
             }
         }
-        /*
-        matrix[0][0] = 0;
-        matrix[1][0] = 0;
-        matrix[0][2] = 0;
-        matrix[0][4] = 0;
-        matrix[1][4] = 0;
-        matrix[2][4] = 0;
-        */
     }
 
     public int getVECTOR_DIM() {

@@ -18,32 +18,29 @@ public class GaussianElimination {
 
     public String echelonForm(){
         for(int col = 0; col < matrix.getN_VECTORS(); col++){
-            if(col != 0){
-                System.out.println();
-            }
             rearrange(col); //metodo che riordina le righe in base agli zeri prima di ogni operazione
-            rowOperations(col);
+            rowOperations(col); //metodo che somma ad una riga la riga contenente l'ultimo pivot moltiplicata per una costante
         }
 
         return buildResults(getPivotColumns());
     }
 
-    private void rearrange(int col){
-        for(int row = 0; row < matrix.getVECTOR_DIM(); row++){
-            if(matrix.getMatrix()[col][row] == 0 && previousAreZero(row, col)){
-                swapRows(row, findRow(row, col));
+    private void rearrange(int col){ //col = colonna di riferimento
+        for(int row = 0; row < matrix.getVECTOR_DIM(); row++){ //partendo dall'alto, controlla ogni riga
+            if(matrix.getMatrix()[col][row] == 0 && previousAreZero(row, col)){ //se l'elemento alla colonna "col", riga "row" è zero e i valori precedenti della riga sono 0
+                swapRows(row, findRow(row, col)); //prendi la prima riga dove alla colonna "col" il valore non è zero e scambiala con la riga dell'iterazione corrente
             }
         }
     }
 
     private void rowOperations(int col){
-        int pivotRow = findPreviousPivot(col);
+        int pivotRow = findPreviousPivot(col); //trova l'elemento pivot presente sulla riga precedente, sulla base del quale verrà creato un coefficiente per la riga da sommare
         for(int row = pivotRow + 1; row < matrix.getVECTOR_DIM(); row++){ //lascio invariata la riga utilizzata per le operazioni
             if(matrix.getMatrix()[col][row] != 0) {
-                double a = matrix.getMatrix()[col][pivotRow];
-                double b = matrix.getMatrix()[col][row];
-                double div = b/a;
-                addFirstRowComb(row, col, div, pivotRow);
+                double a = matrix.getMatrix()[col][pivotRow]; //elemento pivot
+                double b = matrix.getMatrix()[col][row]; //elemento sottostante nella riga presa in esame
+                double div = b/a; //coefficiente che, moltiplicato per il pivot e sommato all'elemento preso in esame, annulla quest'ultimo
+                addFirstRowComb(row, col, div, pivotRow); //Esegue la somma
             }
         }
     }
@@ -65,19 +62,19 @@ public class GaussianElimination {
         return matrix.getVECTOR_DIM();
     }
 
-    private int findRow(int start, int col){
+    private int findRow(int start, int col){ //funzione che cerca una riga (partendo dal basso) dove l'elemento alla colonna "col" è diverso da zero
         for(int i = matrix.getVECTOR_DIM() -1; i >= start; i--){
-            if(matrix.getMatrix()[col][i] != 0){
-                return i;
+            if(matrix.getMatrix()[col][i] != 0){ //se l'elemento non è zero
+                return i; //ritorna la riga
             }
         }
-        return matrix.getVECTOR_DIM() + 1;
+        return matrix.getVECTOR_DIM() + 1; //se non ci sono elementi adatti, ritorna un numero che non corrisponde a nessuna riga
     }
 
     private void swapRows(int row1, int row2){
-        if(row2 != matrix.getVECTOR_DIM() + 1 && row1 < row2){
-            double tmpRow[] = new double[matrix.getN_VECTORS()];
-            for(int i = 0; i < matrix.getN_VECTORS(); i++){
+        if(row2 != matrix.getVECTOR_DIM() + 1 && row1 < row2){ //se la riga da sommare è stata trovata ed è più in basso della riga presa in analisi
+            double tmpRow[] = new double[matrix.getN_VECTORS()]; //vettore temporaneo
+            for(int i = 0; i < matrix.getN_VECTORS(); i++){ //scorre tutti i valori delle righe e li scambia
                 tmpRow[i] = matrix.getMatrix()[i][row1];
                 matrix.getMatrix()[i][row1] = matrix.getMatrix()[i][row2];
                 matrix.getMatrix()[i][row2] = tmpRow[i];
@@ -85,10 +82,10 @@ public class GaussianElimination {
         }
     }
 
-    private boolean previousAreZero(int row, int col){
-        boolean prev = true;
+    private boolean previousAreZero(int row, int col){ //verifica se, dato un elemento, tutti i precedenti ad esso presenti sulla stessa riga sono nulli (necessario per i pivot)
+        boolean prev = true; //di base è vero
         for(int i = col - 1; i >= 0; i--){
-            if(matrix.getMatrix()[i][row] != 0){
+            if(matrix.getMatrix()[i][row] != 0){ //se trova un valore diverso da zero, la condizione non è soddisfatta
                 prev = false;
             }
         }
