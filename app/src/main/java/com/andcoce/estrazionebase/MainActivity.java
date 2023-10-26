@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             matrix.init();
 
             infoText.setText(matrix.toVectorString());
-            infoText.setTextSize(18);
+            infoText.setTextSize(15);
 
             infoBtn.setText(R.string.info2);
             genBtn.setVisibility(View.GONE);

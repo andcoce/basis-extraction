@@ -15,7 +15,7 @@
         android:text="@string/title"
         android:fontFamily="@font/googlesansbold"
         android:textColor="@color/white"
-        android:textSize="35sp"
+        android:textSize="27sp"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"/>
 
@@ -30,7 +30,7 @@
     <TextView
         android:id="@+id/infoView"
         android:layout_width="wrap_content"
-        android:layout_height="275dp"
+        android:layout_height="250dp"
         android:text="@string/desc"
         android:fontFamily="@font/googlesansregular"
         android:textColor="@color/white"
