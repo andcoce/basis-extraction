@@ -27,20 +27,62 @@
         android:layout_centerHorizontal="true"
         />
 
-    <TextView
-        android:id="@+id/infoView"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/help"
-        android:fontFamily="@font/googlesansregular"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textAlignment="center"
-        android:layout_marginTop="340dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_centerHorizontal="true"/>
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="350dp"
+        >
 
+        <TextView
+            android:id="@+id/infoView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/help"
+            android:fontFamily="@font/googlesansregular"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/light_aqua"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+            <TextView
+                android:id="@+id/moduleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint"
+                android:fontFamily="@font/googlesansregular"
+                android:textColor="@color/white"
+                android:layout_marginRight="10dp"
+                />
+
+            <EditText
+                android:id="@+id/editModule"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="9"
+                android:fontFamily="@font/googlesansregular"
+                android:backgroundTint="@color/white"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"
+                android:inputType="number"
+                />
+        </LinearLayout>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +91,7 @@
         android:orientation="vertical"
         android:layout_marginBottom="30dp"
         android:gravity="center">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -54,7 +54,7 @@ public class GaussianElimination {
 
     private int findPreviousPivot(int col){
         for(int i = 0; i < matrix.getVECTOR_DIM(); i++){
-            if(previousAreZero(i, col) && matrix.getMatrix()[i][col] != 0){
+            if(previousAreZero(i, col) && matrix.getMatrix()[col][i] != 0){
                 return i;
             }
         }

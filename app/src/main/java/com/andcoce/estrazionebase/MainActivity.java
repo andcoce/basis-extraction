@@ -7,14 +7,17 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.andcoce.estrazionebase.bean.Matrix;
 import com.andcoce.estrazionebase.business.GaussianElimination;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView infoText;
+    private TextView infoText, moduleText;
+    private EditText editModule;
     private Button infoBtn, genBtn, gaussBtn, resultsBtn, resetBtn;
 
     private Matrix matrix;
@@ -25,22 +28,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        matrix = new Matrix();
-        gauss = new GaussianElimination(matrix);
         initUI();
     }
 
     View.OnClickListener onGenerate = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            matrix.init();
 
-            infoText.setText(matrix.toVectorString());
-            infoText.setTextSize(15);
+            int module = Integer.parseInt(editModule.getText().toString());
+            if(module > 0 && module < 10){
+                matrix = new Matrix(module); //eventuale reset
+                matrix.init();
+                gauss = new GaussianElimination(matrix);
 
-            infoBtn.setText(R.string.info2);
-            genBtn.setVisibility(View.GONE);
-            gaussBtn.setVisibility(View.VISIBLE);
+                infoText.setText(matrix.toVectorString());
+                infoText.setTextSize(15);
+
+                infoBtn.setText(R.string.info2);
+                genBtn.setVisibility(View.GONE);
+                gaussBtn.setVisibility(View.VISIBLE);
+
+                moduleText.setVisibility(View.GONE);
+                editModule.setVisibility(View.GONE);
+            }else{
+                Toast.makeText(MainActivity.this, "Inserisci valori compresi tra 2 e 9!", Toast.LENGTH_SHORT).show();
+            }
+
         }
     };
 
@@ -64,12 +77,13 @@ public class MainActivity extends AppCompatActivity {
             infoBtn.setVisibility(View.VISIBLE);
             infoBtn.setText(R.string.info);
             genBtn.setVisibility(View.VISIBLE);
-
-            matrix = new Matrix();
             gauss = new GaussianElimination(matrix);
 
+            moduleText.setVisibility(View.VISIBLE);
+            editModule.setVisibility(View.VISIBLE);
+
             infoText.setText(R.string.help);
-            infoText.setTextSize(25);
+            infoText.setTextSize(20);
         }
     };
 
@@ -98,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initUI(){
         infoText   = findViewById(R.id.infoView);
+        moduleText = findViewById(R.id.moduleText);
+        editModule = findViewById(R.id.editModule);
         infoBtn    = findViewById(R.id.infoBtn);
         genBtn     = findViewById(R.id.genBtn);
         gaussBtn   = findViewById(R.id.gaussBtn);
