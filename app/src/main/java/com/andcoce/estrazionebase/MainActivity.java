@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 moduleText.setVisibility(View.GONE);
                 editModule.setVisibility(View.GONE);
             }else{
-                Toast.makeText(MainActivity.this, "Inserisci valori compresi tra 2 e 9!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, R.string.alert, Toast.LENGTH_SHORT).show();
             }
 
         }

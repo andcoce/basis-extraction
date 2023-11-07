@@ -17,12 +17,12 @@ public class GaussianElimination {
     }
 
     public String echelonForm(){
-        for(int col = 0; col < matrix.getN_VECTORS(); col++){
+        for(int col = 0; col < matrix.getN_VECTORS(); col++){ //per ogni colonna
             rearrange(col); //metodo che riordina le righe in base agli zeri prima di ogni operazione
             rowOperations(col); //metodo che somma ad una riga la riga contenente l'ultimo pivot moltiplicata per una costante
         }
 
-        return buildResults(getPivotColumns());
+        return buildResults(getPivotColumns()); //compone una stringa di risultati in base alle colonne che contengono i pivot
     }
 
     private void rearrange(int col){ //col = colonna di riferimento
@@ -46,20 +46,20 @@ public class GaussianElimination {
     }
 
     private void addFirstRowComb(int target, int start, double div, int pivotRow){
-        for(int i = start; i < matrix.getN_VECTORS(); i++){
-            double r = matrix.getMatrix()[i][target] - div*matrix.getMatrix()[i][pivotRow];
-            matrix.getMatrix()[i][target] = new BigDecimal(r).setScale(1, RoundingMode.HALF_UP).doubleValue();
+        for(int i = start; i < matrix.getN_VECTORS(); i++){ //per ogni colonna
+            double r = matrix.getMatrix()[i][target] - div*matrix.getMatrix()[i][pivotRow]; //rigaGenerica - coefficiente*rigaPivot, dove il coefficiente è tale da rendere zero il primo valore della riga considerato
+            matrix.getMatrix()[i][target] = new BigDecimal(r).setScale(1, RoundingMode.HALF_UP).doubleValue(); //imposta il risultato arrotondandolo ad un decimale
         }
     }
 
     private int findPreviousPivot(int col){
-        for(int i = 0; i < matrix.getVECTOR_DIM(); i++){
-            if(previousAreZero(i, col) && matrix.getMatrix()[col][i] != 0){
-                return i;
+        for(int i = 0; i < matrix.getVECTOR_DIM(); i++){ //per ogni riga
+            if(previousAreZero(i, col) && matrix.getMatrix()[col][i] != 0){ //se un elemento non è nullo e le celle precedenti della riga sono nulle
+                return i; //pivot individuato
             }
         }
 
-        return matrix.getVECTOR_DIM();
+        return matrix.getVECTOR_DIM(); //altrimenti ritorna un valore troppo grande come errore
     }
 
     private int findRow(int start, int col){ //funzione che cerca una riga (partendo dal basso) dove l'elemento alla colonna "col" è diverso da zero
@@ -92,26 +92,26 @@ public class GaussianElimination {
         return prev;
     }
 
-    private ArrayList<Integer> getPivotColumns(){
+    private ArrayList<Integer> getPivotColumns(){ //funzione che crea una lista con i numeri delle colonne contenenti i pivot
         ArrayList<Integer> cols = new ArrayList<>();
 
-        for(int i = 0; i < matrix.getN_VECTORS(); i++){
-            boolean pivot = false;
-            for(int j = 0; j < matrix.getVECTOR_DIM(); j++){
-                if(previousAreZero(j, i) && matrix.getMatrix()[i][j] != 0){
-                    pivot = true;
+        for(int i = 0; i < matrix.getN_VECTORS(); i++){ //per ogni colonna
+            boolean pivot = false; //di default la colonna non contiene pivot
+            for(int j = 0; j < matrix.getVECTOR_DIM(); j++){ //scorre ogni valore della colonna
+                if(previousAreZero(j, i) && matrix.getMatrix()[i][j] != 0){ //se trova un pivot (elemento non nullo ed elementi precedenti nella riga tutti nulli)
+                    pivot = true; //allora è un pivot
                 }
             }
 
-            if(pivot){
-                cols.add(i);
+            if(pivot){ //se la colonna in questione conteneva un pivot
+                cols.add(i); //segnatelo
             }
         }
 
-        return cols;
+        return cols; //ritorna la lista
     }
 
-    private String buildResults(ArrayList<Integer> pivots){
+    private String buildResults(ArrayList<Integer> pivots){ //compone i risultati da mostrare a schermo in base ai dati ottenuti
         String output1 = "Si ottiene che B = {";
         String gen = "";
         for(int i = 0; i < pivots.size(); i++){
