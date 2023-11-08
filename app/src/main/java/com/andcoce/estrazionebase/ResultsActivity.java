@@ -49,8 +49,12 @@ public class ResultsActivity extends AppCompatActivity {
     private void findPivotCells(){
         for(int i = 0; i < nVectors; i++){
             for(int j = 0; j < dim; j++){
-                if(previousAreZero(i, j) && matrix[i][j] != 0){
-                    table[i][j].setBackgroundResource(R.color.red);
+                if(previousAreZero(i, j)){
+                    if(matrix[i][j] != 0){
+                        table[i][j].setBackgroundResource(R.color.red);
+                    }else{
+                        table[i][j].setBackgroundResource(R.color.orange);
+                    }
                 }
             }
         }
